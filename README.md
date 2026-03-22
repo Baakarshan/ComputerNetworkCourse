@@ -14,6 +14,11 @@
   - 使用 C++ 实现 7-bit 编码模拟
   - 包含源码、CMake 配置和作业说明文档
 
+- `Course-3-(26-3-22)`
+  - 多路复用与调制作业
+  - 使用 C++ 实现 TDM/FDM/CDM 与 FM/AM/PM 模拟
+  - 包含源码、CMake 配置和作业说明文档
+
 ## 当前作业
 
 ### 作业 1
@@ -38,5 +43,21 @@
 - 共同接口：
   - `rs232c_encode(double *volts, int volts_size, const char *msg, int size)`
   - `rs232c_decode(char *msg, int size, const double *volts, int volts_size)`
+
+### 作业 3
+
+`Course-3-(26-3-22)` 实现了：
+
+- 双路消息的复用与解复用（同步时分、统计时分、频分、码分）
+- 载波、数字/模拟调制信号生成
+- 数字与模拟的调频、调幅、调相
+- 主要接口：
+  - `multiplex(...) / demultiplex(...)`
+  - `generate_cover_signal(...)`
+  - `simulate_digital_modulation_signal(...)`
+  - `simulate_analog_modulation_signal(...)`
+  - `modulate_*_frequency(...)`
+  - `modulate_*_amplitude(...)`
+  - `modulate_*_phase(...)`
 
 具体构建方法和运行方式见各自目录下的 `README.md`。
