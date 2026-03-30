@@ -19,6 +19,11 @@
   - 使用 C++ 实现 TDM/FDM/CDM 与 FM/AM/PM 模拟
   - 包含源码、CMake 配置和作业说明文档
 
+- `Course-4-(26-3-29)`
+  - 奇偶校验码检验作业
+  - 使用 C++ 实现偶校验检测函数
+  - 包含源码、CMake 配置和作业说明文档
+
 ## 当前作业
 
 ### 作业 1
@@ -59,5 +64,14 @@
   - `modulate_*_frequency(...)`
   - `modulate_*_amplitude(...)`
   - `modulate_*_phase(...)`
+
+### 作业 4
+
+`Course-4-(26-3-29)` 实现了：
+
+- 奇偶校验码（偶校验）检测
+- 消息元素按 `0` 和非 `0` 两类处理（非 `0` 视为 `1`）
+- 题目接口：
+  - `int parity_check(const unsigned char *msg, const int msg_length)`
 
 具体构建方法和运行方式见各自目录下的 `README.md`。
