@@ -1,0 +1,7 @@
+# ninja log v6
+10	219	7971693249416561	CMakeFiles/course5_demo.dir/src/ethernet.cpp.obj	b73436c8f0245d03
+2	405	7971693249345813	CMakeFiles/course5_demo.dir/src/main.cpp.obj	e03949c4826f5141
+18	702	7971693249494762	CMakeFiles/course5_demo.dir/src/csma_cd.cpp.obj	71ab4fe8f9244a4d
+703	900	7971693256353316	course5_demo.exe	1a458177fbd45c04
+15	619	7971693629968239	CMakeFiles/course5_demo.dir/src/csma_cd.cpp.obj	71ab4fe8f9244a4d
+620	809	7971693636007751	course5_demo.exe	1a458177fbd45c04
