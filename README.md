@@ -1,102 +1,49 @@
 # 计算机网络课程仓库
 
-这个仓库存放计算机网络课程的作业内容。
+这个仓库存放计算机网络课程的课程作业、实验与报告。
 
 ## 目录结构
 
-- `Course-1-(26-3-15)`
-  - 光通信模拟作业
-  - 使用 C++ 和 OpenCV 实现
-  - 包含源码、CMake 配置和作业说明文档
+### 课程作业（Course）
 
-- `Course-2-(26-3-16)`
-  - RS232C 编解码作业
-  - 使用 C++ 实现 7-bit 编码模拟
-  - 包含源码、CMake 配置和作业说明文档
+- `Course-1-(26-3-15)`：光通信模拟（黑白比特 + 八色八进制）
+- `Course-2-(26-3-16)`：RS232C 编解码模拟
+- `Course-3-(26-3-22)`：多路复用与调制（TDM/FDM/CDM，FM/AM/PM）
+- `Course-4-(26-3-29)`：奇偶校验码检验
+- `Course-5-(26-3-30)`：以太网帧匹配 + 帧头定义 + CSMA/CD
+- `Course-6-(26-4-6)`：网桥自学习 + AP 部署模拟
+- `Course-7-(26-4-10)`：Nyquist 采样定理模拟
+- `Course-8-(26-4-13)`：IP 网段判断 + 地址分类 + 分片计算
+- `Course-9-(26-4-17)`：PING/DHCP 行为模拟
+- `Course-10-(26-4-20)`：时间服务交互模拟
+- `Course-11-(26-4-24)`：NTP 参数服务 + 停等/滑窗机制模拟
+- `Course-13-(26-4-27)`：RIP 更新 + Dijkstra 最短路
+- `Course-14-(26-5-1)`：多播分发模型 + TCP/UDP 吞吐对比模型
+- `Course-15-(26-5-4)`：nslookup 目录扫描与流程分析入口
+- `Course-16-(26-5-8)`：注册激活系统模拟（含过期释放）
+- `Course-17-(26-5-11)`：题面暂缺/空白占位说明
+- `Course-18-(26-5-15)`：简易 HTTP 请求处理 + tinyhttpd 阅读指引
 
-- `Course-3-(26-3-22)`
-  - 多路复用与调制作业
-  - 使用 C++ 实现 TDM/FDM/CDM 与 FM/AM/PM 模拟
-  - 包含源码、CMake 配置和作业说明文档
+> 注：第12课在习题集中无程序题目录项，故未单独创建课程目录。
 
-- `Course-4-(26-3-29)`
-  - 奇偶校验码检验作业
-  - 使用 C++ 实现偶校验检测函数
-  - 包含源码、CMake 配置和作业说明文档
+### 实验目录（Lab）
 
-- `Course-5-(26-3-30)`
-  - 以太网帧接收判定 + 传统以太网帧头定义 + CSMA/CD 模拟
-  - 使用 C/C++ 实现
-  - 包含源码、CMake 配置和作业说明文档
+- `Lab-1-(26-4-16)`
+- `Lab-2-(26-4-16)`
+- `Lab-3-(26-4-16)`
+- `Lab-4-(26-4-16)`
 
-- `Course-6-(26-4-6)`
-  - 网桥自学习 + AP 部署模拟
-  - 使用 C++ 实现
-  - 包含源码、CMake 配置和作业说明文档
+## 文档说明
 
-## 当前作业
+每个 `Course-*` 目录均包含：
 
-### 作业 1
+- `README.md`：题目概述、实现说明、构建运行、最小验证
+- `report.md`：简版实验报告（环境/实现/验证/结论）
+- `src/`：示例实现代码
+- `CMakeLists.txt`：构建配置
 
-`Course-1-(26-3-15)` 实现了：
+程序题题面基线见：
 
-- 黑白二值通信：黑色表示 `1`，白色表示 `0`
-- 八色八进制通信
-- 共同接口：
-  - `encode(int msg)`
-  - `decode(cv::Scalar color)`
-  - `send(int msg)`
-  - `receive()`
+- `programming_questions_all.md`（人工核对版）
 
-### 作业 2
-
-`Course-2-(26-3-16)` 实现了：
-
-- RS232C 电压序列编码与解码
-- 7-bit 数据位编码
-- 空闲位、起始位、终止位处理
-- 共同接口：
-  - `rs232c_encode(double *volts, int volts_size, const char *msg, int size)`
-  - `rs232c_decode(char *msg, int size, const double *volts, int volts_size)`
-
-### 作业 3
-
-`Course-3-(26-3-22)` 实现了：
-
-- 双路消息的复用与解复用（同步时分、统计时分、频分、码分）
-- 载波、数字/模拟调制信号生成
-- 数字与模拟的调频、调幅、调相
-- 主要接口：
-  - `multiplex(...) / demultiplex(...)`
-  - `generate_cover_signal(...)`
-  - `simulate_digital_modulation_signal(...)`
-  - `simulate_analog_modulation_signal(...)`
-  - `modulate_*_frequency(...)`
-  - `modulate_*_amplitude(...)`
-  - `modulate_*_phase(...)`
-
-### 作业 4
-
-`Course-4-(26-3-29)` 实现了：
-
-- 奇偶校验码（偶校验）检测
-- 消息元素按 `0` 和非 `0` 两类处理（非 `0` 视为 `1`）
-- 题目接口：
-  - `int parity_check(const unsigned char *msg, const int msg_length)`
-
-### 作业 5
-
-`Course-5-(26-3-30)` 实现了：
-
-- 题35：以太网网卡根据目的地址判断帧是否接收（本机 / 多播 / 广播）
-- 题36：C 语言传统以太网帧头 `struct ethernet_frame_header`
-- 题37：C++ 多线程 CSMA/CD 机制模拟（碰撞检测 + 指数退避）
-
-### 作业 6
-
-`Course-6-(26-4-6)` 实现了：
-
-- 题37：网桥自学习与转发决策（输出每帧目的端口 + MAC 地址表）
-- 题38：教学楼 AP 部署模拟（输出 AP 坐标、信道分配、热力图）
-
-具体构建方法和运行方式见各自目录下的 `README.md`。
+具体构建方法和运行方式见各目录内 `README.md`。
